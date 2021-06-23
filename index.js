@@ -9,10 +9,7 @@ app.get('/', (req, res) => {
     res.send('Practice!')
 })
 
-app.get('/tasks', (req, res) => {
-    const tasks = req.body
-    res.send(tasks)
-})//查找所有的tasks
+
 
 app.post('/tasks', (req, res) => {
     const { des } = req.body
@@ -45,6 +42,10 @@ app.put('/tasks/:id',(req,res)=>{
     tasks[taskIndex]=newTask
     return res.json(newTask)
 })
+app.get('/tasks', (req, res) => {
+    const tasks = req.body
+    res.send(tasks)
+})//查找所有的tasks
 
 app.delete('/tasks/:id',(req,res)=>{
     const {id}=req.params
